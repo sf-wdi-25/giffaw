@@ -4,6 +4,10 @@ body {
   background-color: black; /* Sanity Check! */
 }
 
+p {
+  text-align: center;
+}
+
 button, input {
   display: block;
   font-size: 2em;
