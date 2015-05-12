@@ -17,12 +17,12 @@ button, input {
 }
 
 input {
-  width: 30%;
+  width: 25%;
   left: 35%;
 }
 
 button {
-  left: 65%;
+  left: 60%;
 }
 
 button:hover{
@@ -31,7 +31,7 @@ button:hover{
 
 @media all and (max-width: 600px) {
   input {
-    width: 100%;
+    width: 80%;
     left: 0;
     top: 0;
   }
