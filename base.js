@@ -33,7 +33,7 @@ function getAndRenderGifs(search_term, offset){
     }
 
     response.data.forEach(function(v,i){
-      $("#gif-gallery").append($("<img>").attr("src", v.images.fixed_height.url))
+      $("#gif-gallery").prepend($("<img>").attr("src", v.images.fixed_height.url))
     });
 
   });
