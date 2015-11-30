@@ -26,21 +26,26 @@ function loadMoar(){
 
 function getAndRenderGifs(search_term, offset){
 
+  // this object will be converted to query parameters in our GET request
   var query_data = {
     q: search_term,
     offset: offset || 0,
     api_key: "dc6zaTOxFJmzC"
   };
 
-  $.get(giphy_api_endpoint, query_data, function(response){
+  $.ajax({
+    method: 'GET',
+    url: giphy_api_endpoint,
+    data: query_data,
+    success: function(response){
 
-    if (offset === 0){
-      $("img").remove();
+      if (offset === 0){
+        $("img").remove();
+      }
+
+      response.data.forEach(function(v,i){
+        $("#gif-gallery").prepend($("<img>").attr("src", v.images.fixed_height.url));
+      });
     }
-
-    response.data.forEach(function(v,i){
-      $("#gif-gallery").prepend($("<img>").attr("src", v.images.fixed_height.url));
-    });
-
   });
 }
