@@ -8,7 +8,7 @@ $(document).ready(function(){
   getAndRenderGifs(search_term);
   $("input").keypress(evaluateSearch);
   $("button").click(loadMoar);
-})
+});
 
 function evaluateSearch(event){
   var $input = $(this);
@@ -21,7 +21,7 @@ function evaluateSearch(event){
 
 function loadMoar(){
   offset += 25;
-  getAndRenderGifs(search_term, offset)
+  getAndRenderGifs(search_term, offset);
 }
 
 function getAndRenderGifs(search_term, offset){
@@ -39,7 +39,7 @@ function getAndRenderGifs(search_term, offset){
     }
 
     response.data.forEach(function(v,i){
-      $("#gif-gallery").prepend($("<img>").attr("src", v.images.fixed_height.url))
+      $("#gif-gallery").prepend($("<img>").attr("src", v.images.fixed_height.url));
     });
 
   });
