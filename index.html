@@ -14,6 +14,12 @@
     <script src="base.js"></script>
 	</head>
 	<body id="sanity-check">
-    <input type="text" placeholder="search gifs">
+	<form method="POST" action="/page">
+		<label for="search">search gifs</label>
+		<input id="search" type="text" name="search" placeholder="search gifs"/>
+		<input type="submit" value="search" />
+	</form>
+    <div class="gif">
+    </div>
 	</body>
 </html>
