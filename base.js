@@ -1,7 +1,15 @@
 $(document).ready(function(){
-  console.log("here's your mock data to start with:")
-  console.log(GLOBAL_MOCK_DATA_OBJECT)
+  
 
-  // can you render the mock data to the page?
-
-})
+// can you render the mock data to the page?
+  $.ajax({
+ 	method: 'GET',
+  	url: 'http://api.giphy.com/v1/gifs/search?q=spiders&api_key=dc6zaTOxFJmzC',
+  	// datatype: 'json',
+  	success: function (response) {
+    	response.data.forEach(function callback(element){
+ 			$(".gif").append("<img src=" + element.images.fixed_height.url + ">");
+    	});
+  	}
+	});
+});
