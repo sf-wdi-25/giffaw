@@ -19,11 +19,15 @@ $(document).ready(function(){
 
 	$(document).keyup(function(e) {
 		if(e.keyCode == 13) {
-			var urlPartOne = "'http://api.giphy.com/v1/gifs/search?q=";
-			var urlPartThree ="&api_key=dc6zaTOxFJmzC'";
+			
+			$(".gif").html("");
+
+			var urlPartOne = "http://api.giphy.com/v1/gifs/search?q=";
+			var urlPartThree ="&api_key=dc6zaTOxFJmzC";
 			var urlPartTwo = $("input").val();
 
 			var newUrl = urlPartOne + urlPartTwo + urlPartThree;
+
 
 			console.log(newUrl);
 
