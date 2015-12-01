@@ -1,6 +1,10 @@
 $(document).ready(function(){
+	$("#gifsearch").keydown(function(event) {
+		if (event.which === 13) {
+			console.log($("#gifsearch").val);
+	}
 
-	var searchText = "drake rap";
+	var searchText = $("#gifsearch").val();
 
 	function convertStringToSearchTerm(string) {
 	    string = string.replace(/ /g, "+");
@@ -18,6 +22,7 @@ $(document).ready(function(){
 				$(".gif").append("<img src='" + taco.data[index].images.fixed_height.url + "'>");
 			});
   	}
+	});
 	});
 
 	// $('#searchgif').submit(function(x) {
